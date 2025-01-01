@@ -1,0 +1,123 @@
+/* Decrease the size of the card */
+.custom-card {
+    max-width: 200px; /* Set maximum width */
+    height: 200px; /* Reduce height */
+    margin: 10px; /*auto; Center align the card */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+  }
+  
+  /* Truncate card title and description if too long */
+  .card-title,
+  .card-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Reduce button size */
+  .btn-danger {
+    font-size: 0.85rem; /* Smaller font size */
+    width: 50%; /* Full-width button */
+    margin-top: 10px;
+  }
+  /* Container Styling */
+.container {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Styling */
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Card Styling */
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s ease;
+  overflow: hidden;
+  margin-right: 20px; /* Space between cards */
+  flex: 1 1 25%; /* Ensure cards take equal space */
+  max-width: 400px; /* Maximum width for each card */
+  min-width: 300px; /* Minimum width for responsiveness */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Hover lift effect */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.card-title {
+  font-size: 1.5rem; /* Increase the font size for better visibility */
+  font-weight: bold;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Prevent text overflow */
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #666;
+  max-height: 3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Button Styles */
+button {
+  padding: 10px 15px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s, transform 0.3s ease;
+  margin-top: 10px;
+  width: 100%; /* Ensure the button takes the full width inside the card */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+/* Flexbox for Training Program Cards */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+/* Text Truncation */
+.text-truncate {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .card {
+    flex: 1 1 45%; /* Cards take up 45% width on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 100%; /* Cards take up 100% width on smaller screens */
+  }
+}

@@ -1,0 +1,50 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}/eureka/
+  instance:
+    prefer-ip-address: true
+
+spring:
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: user-service
+            uri:
+              lb://user-service
+            predicates:
+              - Path=/api/user/**
+
+
+          - id: trainingProgram-service
+            uri:
+              lb://trainingProgram-service
+            predicates:
+              - Path=/api/trainingProgram/**
+
+
+
+          - id: progress-track-service
+            uri:
+              lb://progress-track-service
+            predicates:
+              - Path=/api/progress/**
+
+
+          - id: feedback-service
+            uri:
+              lb://feedback-service
+            predicates:
+              - Path=/api/feedback/**
+
+
+          - id: enrollment-service
+            uri:
+              lb://enrollment-service
+            predicates:
+              - Path=/api/enroll/**
+
+
+
+

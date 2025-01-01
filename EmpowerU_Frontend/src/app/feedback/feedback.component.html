@@ -1,0 +1,18 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">All Feedbacks</h2>
+
+  <div class="row">
+    <!-- Loop through the feedbacks and display each feedback as a card -->
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let feedback of feedbacks">
+      <div class="card custom-card shadow-lg">
+        <div class="card-body">
+          <h5 class="card-title text-uppercase font-weight-bold">{{ feedback.courseName }}</h5>
+          <p class="card-text"><strong>Rating:</strong> {{ feedback.rating }} / 5</p>
+          <p class="card-text text-muted" style="max-height: 4rem; overflow: hidden; text-overflow: ellipsis;">
+            <strong>Description:</strong> {{ feedback.description }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

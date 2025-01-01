@@ -1,0 +1,43 @@
+navbar.component.scss
+.navbar {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #17a2b8;
+}
+
+.btn-outline-light {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-outline-light:hover {
+  background-color: #17a2b8;
+  color: white;
+}
+
+footer {
+  background-color: #212529;
+}
+
+footer a {
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #17a2b8;
+}
+
+
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 15px 0;
+    /* text-align: center; */
+  }
+  

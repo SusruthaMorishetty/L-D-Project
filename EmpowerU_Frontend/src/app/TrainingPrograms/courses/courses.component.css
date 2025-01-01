@@ -1,0 +1,67 @@
+/* Landscape Card Styling */
+.landscape-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+
+.landscape-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Fixed size for the card image */
+.landscape-card .card-img {
+  width: 100%; /* Ensure it takes up full width of its container */
+  height: 180px; /* Fixed height for image */
+  object-fit: cover; /* Maintain aspect ratio and fill the area */
+}
+
+.landscape-card .card-body {
+  padding: 20px;
+}
+
+.landscape-card .card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.landscape-card .card-text {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+  max-height: 4.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+}
+
+.landscape-card .actions {
+  display: flex;
+  gap: 10px;
+}
+
+.landscape-card button,
+.landscape-card a.btn {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.landscape-card button:hover,
+.landscape-card a.btn:hover {
+  transform: scale(1.05);
+}
+
+/* Ensure the row layout looks consistent */
+.no-gutters {
+  margin: 0;
+  padding: 0;
+}

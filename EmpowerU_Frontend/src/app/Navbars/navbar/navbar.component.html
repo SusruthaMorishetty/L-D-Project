@@ -1,0 +1,62 @@
+<!-- navbar.component.html -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink='/home'>
+      <img src="assets/images/applogo.jpg" alt="Logo" class="navbar-logo" />
+      EmpowerU</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- <div class="collapse navbar-collapse" id="navbarNav"> -->
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <div class="d-flex ms-auto align-items-center">
+          <!-- Search Form   [(ngModel)]="searchQuery"-->
+          <form class="d-flex me-3" (ngSubmit)="onSearch()" role="search">
+            <input
+              type="text"
+              class="form-control me-2"
+              placeholder="Search"
+              name="search"
+            />
+            <button class="btn btn-outline-light" type="submit">
+              <i class="bi bi-search"></i> <!-- Bootstrap Search Icon -->
+            </button>
+          </form>
+      <!-- <div class="ms-auto"> -->
+      <ul class="navbar-nav d-flex">
+        <li class="nav-item" *ngFor="let link of navLinks">
+          <a class="nav-link" [routerLink]="link.link"  *ngIf="!isLoggedIn || link.link !== '/loginpage' && link.link !== '/signup'">{{ link.label }}</a>
+        </li>
+      </ul>
+
+      <div class="user-info">
+        <div class="profile-container" *ngIf="isLoggedIn">
+          <!-- Replace the image tag with FontAwesome or Bootstrap icon -->
+          <i class="bi bi-person-circle profile-icon text-white" (click)="toggleDropdown()"></i>
+          <span>{{ username }}</span>
+          <div class="dropdown-menu" [ngClass]="{'show': dropdownVisible}">
+            <ul>
+              <!-- Admin dashboard link -->
+              <li *ngIf="userRole === 'admin'"><a routerLink="/dashboard" (click)="closeDropdown()">Admin Dashboard</a></li>
+               <!-- User dashboard link -->
+              <li *ngIf="userRole === 'user'"><a routerLink="/userdashboard" (click)="closeDropdown()">Dashboard</a></li>
+              <li><a routerLink="/profile" (click)="closeDropdown()">Profile</a></li>
+              <li><a routerLink="/settings" (click)="closeDropdown()">Settings</a></li>
+              <li><a (click)="logout()">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</nav>
+

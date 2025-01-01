@@ -1,0 +1,49 @@
+<div class="add-training-program-page">
+    <!-- Left Side Image as Background -->
+    <div class="background-image">
+      <div class="form-container">
+        <h3 class="text-center">Add New Training Program</h3>
+  
+        <!-- Training Program Form -->
+        <form [formGroup]="trainingProgramForm" (ngSubmit)="onSubmit()">
+          <!-- Title Field -->
+          <div class="mb-3"> 
+            <label for="title" class="form-label" >Title</label>
+            <input
+              type="text"
+              id="title"
+              class="form-control"
+              formControlName="title"
+              placeholder="Enter title of the program"
+            />
+            <div *ngIf="trainingProgramForm.get('title')?.touched && trainingProgramForm.get('title')?.invalid" class="text-danger">
+              <small *ngIf="trainingProgramForm.get('title')?.errors?.['required']">Title is required.</small>
+              <small *ngIf="trainingProgramForm.get('title')?.errors?.['minlength']">Title must be at least 5 characters long.</small>
+            </div>
+          </div>
+  
+          <!-- Description Field -->
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea
+              id="description"
+              class="form-control"
+              formControlName="description"
+              rows="4"
+              placeholder="Enter description of the program"
+            ></textarea>
+            <div *ngIf="trainingProgramForm.get('description')?.touched && trainingProgramForm.get('description')?.invalid" class="text-danger">
+              <small *ngIf="trainingProgramForm.get('description')?.errors?.['required']">Description is required.</small>
+              <small *ngIf="trainingProgramForm.get('description')?.errors?.['minlength']">Description must be at least 10 characters long.</small>
+            </div>
+          </div>
+  
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary" [disabled]="trainingProgramForm.invalid">
+            Create Training Program
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

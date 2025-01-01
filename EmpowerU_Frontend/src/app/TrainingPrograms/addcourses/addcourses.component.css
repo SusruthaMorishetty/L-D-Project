@@ -1,0 +1,86 @@
+/* Add Course Page Styling */
+.add-course-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  position: relative;
+  overflow: hidden; /* Ensure no overflowing content */
+}
+
+/* Background Image */
+.background-image {
+  background: url('/assets/images/CA.jpg') no-repeat center center/cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* opacity: 0.7; */
+  z-index: 0; /* Set a lower z-index for the background */
+}
+
+/* Form Container Styling */
+.form-container {
+  margin: 50px auto 50px auto;
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #0e0d0d;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1; /* Ensure the form is above the background */
+  position: relative; /* Maintain relative positioning for z-index */
+}
+
+/* Form Elements */
+.form-container .form-control {
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.form-container .btn-primary {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.form-container h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Validation Error Message */
+.text-danger {
+  font-size: 0.9rem;
+}
+
+/* Navbar and Footer Fix */
+nav.navbar {
+  margin-bottom: 20px;
+  z-index: 10; /* Ensure the navbar stays above the background */
+}
+
+footer {
+  z-index: 10; /* Ensure the footer stays above the background */
+}
+
+/* Ensure Footer Stays at Bottom */
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .form-container {
+    width: 90%;
+    padding: 15px;
+  }
+}

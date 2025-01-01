@@ -1,0 +1,24 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Courses</h2>
+
+  <div class="row">
+    <!-- Loop through the courses array and display each course as a card -->
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 mx-2" *ngFor="let course of courses">
+      <div class="card custom-card shadow-lg">
+        <div class="card-body">
+          <h5 class="card-title text-uppercase font-weight-bold text-center">{{ course.title }}</h5>
+          <p class="card-text text-muted" style="max-height: 3rem; overflow: hidden; text-overflow: ellipsis;">
+            {{ course.description }}
+          </p>
+          <div class="d-flex flex-column align-items-center">
+            <!-- Visit Course Button -->
+            <a [href]="course.contentUrl" class="btn btn-primary mb-2" target="_blank">Visit Course</a>
+            
+            <!-- Give Feedback Button -->
+            <button class="btn btn-success" (click)="saveIdAndNavigate(course.id)">Give Feedback</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

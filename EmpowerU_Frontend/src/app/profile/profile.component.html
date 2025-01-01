@@ -1,0 +1,38 @@
+<div class="card profile-card" *ngIf="userDetails; else errorTemplate">
+    <div class="card-header text-center bg-primary text-white">
+      <h2 class="card-title">User Profile</h2>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12 text-center mb-3">
+          <i
+            class="bi bi-person-circle profile-icon text-primary"
+            style="font-size: 5rem;"
+          ></i>
+        </div>
+        <div class="col-12">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <span class="label">Name:</span>
+              <span class="detail"> {{ userDetails?.username || 'N/A' }}</span>
+            </li>
+            <li class="list-group-item">
+              <span class="label">Email:</span>
+              <span class="detail"> {{ userDetails?.email || 'N/A' }}</span>
+            </li>
+            <li class="list-group-item">
+              <span class="label">Role:</span>
+              <span class="detail"> {{ userDetails?.role || 'N/A' }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #errorTemplate>
+    <div class="alert alert-danger text-center">
+      <p>{{ errorMessage || 'An error occurred while fetching user details.' }}</p>
+    </div>
+  </ng-template>
+

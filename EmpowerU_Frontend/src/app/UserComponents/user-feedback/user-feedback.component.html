@@ -1,0 +1,37 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Provide Your Rating and Feedback</h2>
+ 
+  <!-- Feedback Form -->
+  <form (ngSubmit)="onSubmit()" [formGroup]="feedbackForm" class="feedback-form">
+   
+    <!-- Rating Field -->
+    <div class="form-group">
+      <label for="rating">Rating</label>
+      <select id="rating" class="form-control" formControlName="rating">
+        <option value="">Select Rating</option>
+        <option value="1">1 - Poor</option>
+        <option value="2">2 - Fair</option>
+        <option value="3">3 - Good</option>
+        <option value="4">4 - Very Good</option>
+        <option value="5">5 - Excellent</option>
+      </select>
+      <div *ngIf="feedbackForm.get('rating')?.invalid && feedbackForm.get('rating')?.touched" class="text-danger">
+        Rating is required.
+      </div>
+    </div>
+ 
+    <!-- Description Field -->
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" class="form-control" rows="4" formControlName="description" placeholder="Write your feedback here..."></textarea>
+      <div *ngIf="feedbackForm.get('description')?.invalid && feedbackForm.get('description')?.touched" class="text-danger">
+        Description is required.
+      </div>
+    </div>
+ 
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-success w-100" [disabled]="feedbackForm.invalid">
+      Submit Feedback
+    </button>
+  </form>
+</div>

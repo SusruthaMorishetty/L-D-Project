@@ -1,0 +1,17 @@
+<div class="container mt-4">
+    <h3 *ngIf="query">Search Results for "{{ query }}"</h3>
+    <div *ngIf="results.length > 0; else noResults">
+      <div *ngFor="let result of results" class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ result.name }}</h5>
+          <p class="card-text">{{ result.description }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Display if no results found -->
+    <ng-template #noResults>
+      <p class="text-muted">No results found for "{{ query }}".</p>
+    </ng-template>
+  </div>
+  

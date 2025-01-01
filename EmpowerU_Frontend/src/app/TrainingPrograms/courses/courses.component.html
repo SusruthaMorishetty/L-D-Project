@@ -1,0 +1,31 @@
+<div class="container mt-5">
+  <h2 class="text-center">Courses</h2>
+
+  <div class="row">
+    <!-- Loop through the courses array -->
+    <div class="col-12 mb-4" *ngFor="let course of courses; let i = index">
+      <div class="card custom-card landscape-card">
+        <div class="row no-gutters">
+          <!-- Card Image -->
+          <div class="col-md-4">
+            <img [src]="courseImages[i]" class="card-img" alt="Course Image" />
+          </div>
+
+          <!-- Card Details -->
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{ course.title }}</h5>
+              <p class="card-text">
+                {{ course.description }}
+              </p>
+              <div class="actions">
+                <a [href]="course.contentUrl" class="btn btn-primary">Visit Course</a>
+                <button class="btn btn-danger" (click)="deleteCourse(course.id)">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

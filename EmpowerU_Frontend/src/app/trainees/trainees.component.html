@@ -1,0 +1,34 @@
+<div class="container mt-5">
+    <h2 class="text-center">User List</h2>
+  
+    <div class="row">
+      <!-- Table for displaying users -->
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>User ID</th>
+            <th>Name</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Loop through the users array and display each user -->
+          <tr *ngFor="let user of users">
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>
+              <!-- Add and Delete Buttons for each user -->
+              <button class="btn btn-success" (click)="addUserToProgram(user.id)">Add</button>
+              <button class="btn btn-danger mx-4" (click)="removeUserFromProgram(user.id)">Remove</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <!-- Show message if no users -->
+      <div *ngIf="users.length === 0" class="col-12">
+        <p class="text-center text-muted">No users available.</p>
+      </div>
+    </div>
+  </div>
+  

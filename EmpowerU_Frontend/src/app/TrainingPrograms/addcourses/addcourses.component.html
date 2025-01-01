@@ -1,0 +1,64 @@
+<div class="add-course-page">
+  <!-- Left Side Image as Background -->
+  <div class="background-image">
+    <div class="form-container">
+      <h3 class="text-center">Add New Course</h3>
+
+      <!-- Course Form -->
+      <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+        <!-- Title Field -->
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input
+            type="text"
+            id="title"
+            class="form-control"
+            formControlName="title"
+            placeholder="Enter course title"
+          />
+          <div *ngIf="courseForm.get('title')?.touched && courseForm.get('title')?.invalid" class="text-danger">
+            <small *ngIf="courseForm.get('title')?.errors?.['required']">Title is required.</small>
+            <small *ngIf="courseForm.get('title')?.errors?.['minlength']">Title must be at least 5 characters long.</small>
+          </div>
+        </div>
+
+        <!-- Description Field -->
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea
+            id="description"
+            class="form-control"
+            formControlName="description"
+            rows="4"
+            placeholder="Enter course description"
+          ></textarea>
+          <div *ngIf="courseForm.get('description')?.touched && courseForm.get('description')?.invalid" class="text-danger">
+            <small *ngIf="courseForm.get('description')?.errors?.['required']">Description is required.</small>
+            <small *ngIf="courseForm.get('description')?.errors?.['minlength']">Description must be at least 10 characters long.</small>
+          </div>
+        </div>
+
+        <!-- Content URL Field -->
+        <div class="mb-3">
+          <label for="contentUrl" class="form-label">Course URL</label>
+          <input
+            type="url"
+            id="contentUrl"
+            class="form-control"
+            formControlName="contentUrl"  
+            placeholder="Enter course URL"
+          />
+          <div *ngIf="courseForm.get('contentUrl')?.touched && courseForm.get('contentUrl')?.invalid" class="text-danger">
+            <small *ngIf="courseForm.get('contentUrl')?.errors?.['required']">URL is required.</small>
+            <small *ngIf="courseForm.get('contentUrl')?.errors?.['pattern']">Enter a valid URL.</small>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary" [disabled]="courseForm.invalid">
+          Create Course
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

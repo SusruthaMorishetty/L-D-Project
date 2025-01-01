@@ -1,0 +1,107 @@
+<div class="login-page">
+  <!-- Left Side with Image -->
+  <div class="left-side"></div>
+
+  <!-- Right Side with Signup Form -->
+  <div class="right-side">
+    <div class="login-container">
+      <h3>SignUp</h3>
+      <form (ngSubmit)="signup()" #signupForm="ngForm">
+        <!-- Username Field -->
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            name="username"
+            placeholder="Enter your username"
+            required
+            [(ngModel)]="user.username"
+          />
+        </div>
+
+
+        <!-- Email Field -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+            [(ngModel)]="user.email"
+          />
+        </div>
+
+        <!-- Role Dropdown -->
+        <div class="mb-3">
+          <label for="role" class="form-label">Role</label>
+          <select
+            class="form-select"
+            id="role"
+            name="role"
+            [(ngModel)]="user.role"
+            required
+          >
+            <option value="user">User</option>
+          </select>
+        </div>
+
+         <!-- Password Field -->
+         <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+            [(ngModel)]="user.password"
+          />
+        </div>
+
+        <!-- Sign Up Button -->
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+      </form>
+
+      <!-- Error Message -->
+      <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+        {{ errorMessage }}
+      </div>
+
+      <!-- Social Login Section -->
+      <div class="text-center my-4">
+        <!-- Heading -->
+        <h5 class="other-login-heading">Other Login Options</h5>
+        <hr class="divider-line" />
+
+        <!-- Social Login Logos -->
+        <div class="social-login d-flex justify-content-center">
+          <!-- Google Login -->
+          <a href="/auth/google" class="btn btn-outline-primary d-flex align-items-center mx-2">
+            <img src="assets/logos/googleLogo.jpg" alt="Google Icon" class="icon" />
+          </a>
+
+          <!-- Facebook Login -->
+          <a href="/auth/facebook" class="btn btn-outline-primary d-flex align-items-center mx-2">
+            <img src="assets/logos/facebookLogo.jpg" alt="Facebook Icon" class="icon" />
+          </a>
+
+          <!-- Apple Login -->
+          <a href="/auth/apple" class="btn btn-outline-primary d-flex align-items-center mx-2">
+            <img src="assets/logos/macLogo.jpg" alt="Apple Icon" class="icon" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Login Link -->
+      <div class="signup-link">
+        <p>Already have an account? <a href="/login">Log In</a></p>
+      </div>
+    </div>
+  </div>
+</div>

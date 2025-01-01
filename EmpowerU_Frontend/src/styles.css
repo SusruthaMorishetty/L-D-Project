@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+/* html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  } */
+
+  html, body {
+    height: 100%; /* Ensure the body fills the viewport */
+    margin: 0; /* Remove any default margin */
+}
+.container-fluid {
+  height: 100%;
+  display: flex;
+}
+
+/* .container-fluid {
+    height: 100%; /* Make the container take up the full height */
+  /*  display: flex;
+    flex-direction: column;
+} */
+
+.row {
+    flex-grow: 1; /* Allow the row to grow and take up remaining space */
+}
+
+/*.col-12 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allow each of your components to grow to take up the full height */
+/*}*/
+
+app-navbar, app-main, app-footer {
+    flex-grow: 0; /* Ensure that these elements grow based on their content */
+}
+
+/*app-main {
+    flex-grow: 1; /* Main content should take the remaining space */
+    /*overflow-y: auto; /* Allow scrolling if the content exceeds the available space */
+/*}*/
+
+app-footer {
+    flex-grow: 0; /* Footer stays at the bottom */
+} 

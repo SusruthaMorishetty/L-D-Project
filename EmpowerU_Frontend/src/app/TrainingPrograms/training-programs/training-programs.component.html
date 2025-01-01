@@ -1,0 +1,56 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Training Programs</h2>
+
+  
+  
+  <div class="row">
+    <!-- Use async pipe to handle Observable -->
+    <ng-container *ngIf="trainingPrograms$ | async as trainingPrograms; else loading">
+      <!-- Loop through the trainingPrograms array and display each program as a card -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let program of trainingPrograms">
+        <div class="card custom-card mb-4">
+          <img
+            [src]="randomImages[program.id]"
+            class="card-img-top"
+            alt="Education Image"
+            style="height: 150px; object-fit: cover; border-radius: 8px 8px 0 0;"
+          />
+          <div class="card-body">
+            <h5 class="card-title text-truncate" style="font-size: 1.25rem; font-weight: bold;">{{ program.title }}</h5>
+            <p class="card-text text-truncate" style="max-height: 3rem; overflow: hidden; font-size: 1rem;">
+              {{ program.description }}
+            </p>
+            <div class="d-flex justify-content-between">
+              <!-- View Courses Button -->
+              <button class="btn btn-primary btn-sm" [routerLink]="['/courses', program.id]" (click)="saveId(program.id)">
+                View Courses
+              </button>
+              <!-- Add Trainee Button -->
+              <button class="btn btn-success btn-sm" (click)="AddTrainineeToProgram(program.id)">
+                Add Trainee
+              </button>
+              <!-- Delete Button -->
+              <button class="btn btn-danger btn-sm" (click)="deleteProgram(program.id)">
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Show message if no programs -->
+      <div *ngIf="trainingPrograms.length === 0" class="col-12">
+        <p class="text-center text-muted">No training programs available.</p>
+      </div>
+    </ng-container>
+
+    <!-- Loading template -->
+    <ng-template #loading>
+      <div class="col-12 text-center">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

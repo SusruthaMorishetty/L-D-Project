@@ -1,0 +1,86 @@
+<div class="login-page">
+    <!-- Left Side with Image -->
+    <div class="left-side"></div>
+  
+    <!-- Right Side with Login Form -->
+    <div class="right-side">
+
+      <div class="login-container">
+        <h3>Login</h3>
+        <div *ngIf="errorMessage" class="alert alert-danger">
+          {{ errorMessage }}
+        </div>
+        <form (ngSubmit)="signin()" #loginForm="ngForm">
+          <!-- <form> -->
+          <!-- Username Field -->
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              name="username"
+              [(ngModel)]="userCredentials.username"
+              placeholder="Enter your username"
+              required
+            />
+          </div>
+  
+          <!-- Password Field -->
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              [(ngModel)]="userCredentials.password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+
+          <!-- <div *ngIf="errorMessage" class="alert alert-danger">
+            {{ errorMessage }}
+          </div>     -->
+  
+          <!-- Login Button -->
+          <button type="submit" class="btn btn-primary">Login</button>
+  
+          <!-- Social Login Section -->
+<!-- Social Login Section -->
+<div class="text-center my-4">
+    <!-- Heading -->
+    <h5 class="other-login-heading">Other Login Options</h5>
+    <hr class="divider-line" />
+  
+    <!-- Social Login Logos -->
+    <div class="social-login d-flex justify-content-center">
+      <!-- Google Login -->
+      <a href="/auth/google" class="btn btn-outline-primary d-flex align-items-center mx-2">
+        <img src="assets/logos/googleLogo.jpg" alt="Google Icon" class="icon" />
+      </a>
+  
+      <!-- Facebook Login -->
+      <a href="/auth/facebook" class="btn btn-outline-primary d-flex align-items-center mx-2">
+        <img src="assets/logos/facebookLogo.jpg" alt="Facebook Icon" class="icon" />
+      </a>
+  
+      <!-- Apple Login -->
+      <a href="/auth/apple" class="btn btn-outline-primary d-flex align-items-center mx-2">
+        <img src="assets/logos/macLogo.jpg" alt="Apple Icon" class="icon" />
+      </a>
+    </div>
+  </div>
+  
+  
+   </form>
+  
+        <!-- Signup Link -->
+        <div class="signup-link">
+          <p>Don’t have an account? <a href="/signup">Sign up</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

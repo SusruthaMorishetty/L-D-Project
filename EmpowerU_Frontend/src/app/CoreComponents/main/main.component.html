@@ -1,0 +1,164 @@
+<div class="row">
+  <div class="col-12 content">
+    <div id="educationalCarousel" class="carousel slide" data-bs-ride="carousel">
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#educationalCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#educationalCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      </div>
+
+      <!-- Carousel Items -->
+      <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active" data-bs-interval="2000">
+          <div class="d-flex align-items-center justify-content-start" style="height: 75vh; position: relative;">
+            <img src="assets/images/education1.jpg" class="d-block w-100" alt="Educational Slide 1" style="object-fit: cover; height: 100%;" />
+            <div class="carousel-caption d-none d-md-block" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);">
+              <div class="card text-dark bg-light p-3" style="max-width: 400px; margin-left: 70px;">
+                <blockquote class="blockquote mb-0">
+                  <h3>Learn without limits</h3>
+                  <footer class="blockquote-footer" style="margin-top: 10px;">
+                    Start, switch, or advance your career with more than 7,000 courses, Professional Certificates, and degrees from world-class universities and companies.
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item" data-bs-interval="2000">
+          <div class="d-flex align-items-center justify-content-center" style="height: 75vh; position: relative;">
+            <img src="assets/images/education2.jpg" class="d-block w-100" alt="Educational Slide 2" style="object-fit: cover; height: 100%;" />
+            <div class="carousel-caption d-none d-md-block" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%);">
+              <div class="card text-dark bg-light p-3" style="max-width: 400px; margin-left: 70px;">
+                <blockquote class="blockquote mb-0">
+                  <h3>Jump into learning for less</h3>
+                  <footer class="blockquote-footer" style="margin-top: 10px;">
+                    If you’re new to EmpowerU, we’ve got good news: For a limited time, courses start at just ₹449 for new learners! Shop now.
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#educationalCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#educationalCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Four Blocks Section -->
+<div class="container my-5">
+  <!-- Main Heading -->
+  <h2 class="text-center mb-5">Learning focused on your goals</h2>
+
+  <!-- Blocks -->
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="block p-4 text-center shadow rounded">
+        <h4>Hands-On Training</h4>
+        <p>Engage in interactive courses with real-world scenarios, coding exercises, and quizzes tailored to your skill level.</p>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="block p-4 text-center shadow rounded">
+        <h4>Flexible learning</h4>
+        <p>Learn at your own pace, move between multiple courses, or switch to a different course</p>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="block p-4 text-center shadow rounded">
+        <h4>Data-Driven Insights</h4>
+        <p>Leverage analytics from user feedback to drive continuous improvement, aligning training programs with organizational goals.</p>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="block p-4 text-center shadow rounded">
+        <h4>Learn anything</h4>
+        <p>Explore any interest or trending topic, take prerequisites, and advance your skills</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Feedback Section -->
+<div class="container my-5">
+  <h2 class="text-center mb-5">What our learners are saying</h2>
+  <div class="feedback-section">
+    <div class="feedback-container">
+      <div *ngFor="let feedback of feedbacks" class="card feedback-card">
+        <div class="card-body">
+          <h5 class="card-title">{{ feedback.courseName }}</h5>
+          <p class="card-text">Rating: {{ feedback.rating }}</p>
+          <p class="card-text">{{ feedback.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Collaboration Section -->
+<div class="container mt-5">
+  <div class="border p-4 rounded shadow" style="background-color: #f8f9fa;">
+    <h2 class="text-center mb-4">We collaborate with 350+ leading universities and companies</h2>
+
+    <div class="row text-center">
+      <div class="col-md-4 mb-3">
+        <a href="https://illinois.edu" target="_blank" rel="noopener noreferrer">
+          <img src="assets/logos/illinois.jpg" alt="University of Illinois" class="img-fluid" style="max-width: 180px;">
+        </a>
+      </div>
+      <div class="col-md-4 mb-3">
+        <a href="https://www.duke.edu" target="_blank" rel="noopener noreferrer">
+          <img src="assets/logos/duke.jpg" alt="Duke University" class="img-fluid" style="max-width: 180px;">
+        </a>
+      </div>
+      <div class="col-md-4 mb-3">
+        <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+          <img src="assets/logos/google.jpg" alt="Google" class="img-fluid" style="max-width: 180px;">
+        </a>
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-md-4 mb-3">
+        <a href="https://umich.edu" target="_blank" rel="noopener noreferrer">
+          <img src="assets/logos/michigan.jpg" alt="University of Michigan" class="img-fluid" style="max-width: 180px;">
+        </a>
+      </div>
+      <div class="col-md-4 mb-3">
+        <a href="https://www.ibm.com" target="_blank" rel="noopener noreferrer">
+          <img src="assets/logos/ibm.jpg" alt="IBM" class="img-fluid" style="max-width: 180px;">
+        </a>
+      </div>
+      <div class="col-md-4 mb-3">
+        <a href="https://www.imperial.ac.uk" target="_blank" rel="noopener noreferrer">
+          <img src="assets/logos/imperial.jpg" alt="Imperial College London" class="img-fluid" style="max-width: 180px;">
+        </a>
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-md-4 mb-3">
+        <a href="https://www.stanford.edu" target="_blank" rel="noopener noreferrer">
+          <img src="assets/logos/stanford.jpg" alt="Stanford University" class="img-fluid" style="max-width: 180px;">
+        </a>
+      </div>
+      <div class="col-md-4 mb-3">
+        <a href="https://www.upenn.edu" target="_blank" rel="noopener noreferrer">
+          <img src="assets/logos/penn.jpg" alt="University of Pennsylvania" class="img-fluid" style="max-width: 180px;">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

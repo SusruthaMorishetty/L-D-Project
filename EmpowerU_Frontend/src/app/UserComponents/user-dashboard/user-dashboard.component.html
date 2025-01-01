@@ -1,0 +1,49 @@
+<div class="dashboard-container">
+  <div class="welcome-section">
+    <h2>Welcome to the EmpowerU Dashboard</h2>
+    <p>Explore and manage your training programs, courses, and progress efficiently.</p>
+  </div>
+
+  <!-- <div class="overview-cards">
+    <div class="card">
+      <h3>Total Training Programs</h3>
+      <p>12</p>
+    </div>
+    <div class="card">
+      <h3>Total Courses</h3>
+      <p>25</p>
+    </div>
+    <div class="card">
+      <h3>Completed Programs</h3>
+      <p>8</p>
+    </div>
+    <div class="card">
+      <h3>Feedback Submitted</h3>
+      <p>15</p>
+    </div>
+  </div> -->
+
+  <div class="sections">
+    <div class="section">
+      <h4>Training Programs</h4>
+      <p>Manage your training programs and add new ones.</p>
+      <button class="btn btn-primary" routerLink="/usertrainingprograms">View Training Programs</button>
+    </div>
+    <div class="section">
+      <h4>Courses</h4>
+      <p>Explore and add courses to your learning journey.</p>
+      <button class="btn btn-primary" routerLink="/usercourses/:trainingProgramId">View Courses</button>
+    </div>
+    <!-- <div class="section">
+      <h4>Progress Tracking</h4>
+      <p>Monitor your progress and achievements.</p>
+      <button class="btn btn-primary" routerLink="/">Track Progress</button>
+    </div> -->
+    <div class="section">
+      <h4>Feedback</h4>
+      <p>Provide feedback to improve our learning programs.</p>
+      <button class="btn btn-primary" routerLink="/feedback">View All Feedback</button>
+    </div>
+  </div>
+</div>
+

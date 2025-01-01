@@ -1,0 +1,20 @@
+<div class="container mt-5">
+    <h2 class="text-center">Courses</h2>
+  
+    <div class="row">
+      <!-- Loop through the courses array and display each course as a card -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let course of courses">
+        <div class="card custom-card mb-4">
+          <div class="card-body">
+            <h5 class="card-title text-truncate">{{ course.title }}</h5>
+            <p class="card-text text-truncate" style="max-height: 3rem; overflow: hidden;">
+              {{ course.description }}
+            </p>
+            <a [href]="course.url" class="btn btn-primary" >Visit Course</a>
+            <!-- <button class="btn btn-danger" (click)="deleteCourse(course)">Delete</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

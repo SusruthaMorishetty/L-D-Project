@@ -1,0 +1,115 @@
+/* Container Styling */
+.container {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title Styling */
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  /* Card Styling */
+  .card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-right: 20px; /* Space between cards */
+    flex: 1 1 25%; /* Ensure cards take equal space */
+    max-width: 380px; /* Maximum width for each card */
+    min-width: 300px; /* Minimum width for responsiveness */
+    transition: transform 0.3s, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px); /* Hover lift effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-body {
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  /* Title Styling */
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase; /* Uppercase text */
+    margin-bottom: 10px;
+    text-align: center; /* Centered title */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Ellipsis for overflowed text */
+  }
+  
+  /* Description Styling */
+  .card-text {
+    font-size: 1rem;
+    color: #666;
+    max-height: 3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 20px; /* Space between description and buttons */
+  }
+  
+  /* Button Styling */
+  button, .btn-primary {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    transition: background-color 0.3s, transform 0.3s ease;
+    width: 100%; /* Full width button */
+  }
+  
+  button:hover, .btn-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight scale effect */
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .btn-success {
+    background-color: #28a745;
+    color: white;
+    margin-top: 10px; /* Space between buttons */
+  }
+  
+  .d-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Flexbox for Course Cards */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 992px) {
+    .card {
+      flex: 1 1 45%; /* Cards take up 45% width on medium screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      flex: 1 1 100%; /* Cards take up 100% width on smaller screens */
+    }
+  }
+  

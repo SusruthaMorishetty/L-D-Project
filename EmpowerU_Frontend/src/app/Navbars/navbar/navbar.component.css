@@ -1,0 +1,131 @@
+/* General Navbar Styles */
+.nav-link {
+  cursor: pointer;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #343a40; /* Matches Bootstrap's bg-dark */
+  padding: 0.5rem 1rem;
+}
+
+.navbar .navbar-brand {
+  font-weight: bold;
+  font-size: 1.25rem; /* Slightly larger font size */
+  color: #ffffff;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 1rem; /* Adds space between nav items */
+}
+
+.navbar-nav .nav-item {
+  cursor: pointer;
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #adb5bd; /* Lighter gray on hover */
+}
+
+.ms-auto {
+  margin-left: auto; /* Pushes content to the right */
+}
+
+/* Profile Section */
+.profile-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Profile Icon */
+/* Profile Icon */
+.profile-icon {
+  font-size: 40px; /* Increase the icon size */
+  width: 40px; /* Width adjusted to match font-size */
+  height: 40px; /* Height adjusted to match font-size */
+  border-radius: 50%;
+  border: 2px solid #ffffff; /* White border */
+  margin-right: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Center the icon */
+  transition: transform 0.3s ease;
+}
+
+
+.profile-icon:hover {
+  transform: scale(1.1); /* Zoom effect */
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px); /* Ensures it's placed just below the profile icon */
+  right: 0;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 150px; /* Set width of the dropdown */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: none; /* Ensure it is hidden by default */
+  z-index: 1050; /* Ensure the dropdown appears above other elements */
+}
+
+/* Show dropdown when `dropdownVisible` is true */
+.dropdown-menu.show {
+  display: block; /* Show the dropdown */
+}
+
+/* Styling for each list item */
+.dropdown-menu li {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f8f9fa;
+}
+
+.dropdown-menu a {
+  text-decoration: none;
+  color: #212529;
+  display: block;
+  width: 100%;
+}
+
+.dropdown-menu a:hover {
+  text-decoration: none;
+  color: #007bff;
+}
+
+
+/* Username Style */
+.profile-container span {
+  color: #ffffff; /* White color for username */
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.navbar-logo {
+  width: 30px; /* Set width of the logo */
+  height: auto;
+  margin-right: 10px; /* Space between logo and text */
+}
